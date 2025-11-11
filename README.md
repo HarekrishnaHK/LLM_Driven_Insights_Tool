@@ -42,16 +42,14 @@ InsightLLM/
    pip install -r requirements.txt
 ````
 
-3. Create a `.env` file with your Gemini API key:
+3. Create a .env file with your Gemini API key:
 
-   ```bash
+
    GEMINI_API_KEY=your_gemini_api_key_here
-   ```
+
 4. Run the app:
 
-   ```bash
    streamlit run app.py
-   ```
 
 ## Usage
 
@@ -63,5 +61,3 @@ InsightLLM/
 ## Screenshots
 
 ![InsightLLM Interface](assets/Insight.png)
-
-```
