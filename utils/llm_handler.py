@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 import google.generativeai as genai
 
-# Load environment variables
+# Load environment variables from .env file
 load_dotenv()
 
 class LLMHandler:
@@ -22,13 +22,15 @@ class LLMHandler:
                 f"{sample_data}\n\n"
                 "Provide key insights, patterns, and possible trends in simple English."
             )
-            model = genai.GenerativeModel('gemini-pro-latest')
+            model = genai.GenerativeModel('gemini-2.5-flash-lite')  # Using Gemini Flash Lite
             response = model.generate_content(prompt)
             if response.text:
                 return response.text.strip()
             else:
                 return "No insights generated."
         except Exception as e:
+            if "quota" in str(e).lower() or "limit" in str(e).lower():
+                return "⚠️ Gemini API quota exceeded. Please wait and try again, or upgrade your quota at https://ai.google.dev/gemini-api/docs/rate-limits."
             return f"⚠️ Error generating insights: {str(e)}"
 
     def answer_question(self, df, question):
@@ -39,11 +41,13 @@ class LLMHandler:
                 f"Question: {question}\n"
                 "Answer the question using the dataset and explain briefly."
             )
-            model = genai.GenerativeModel('gemini-pro-latest')
+            model = genai.GenerativeModel('gemini-2.5-flash-lite')  # Using Gemini Flash Lite
             response = model.generate_content(prompt)
             if response.text:
                 return response.text.strip()
             else:
                 return "No answer received from the model."
         except Exception as e:
+            if "quota" in str(e).lower() or "limit" in str(e).lower():
+                return "⚠️ Gemini API quota exceeded. Please wait and try again, or upgrade your quota at https://ai.google.dev/gemini-api/docs/rate-limits."
             return f"⚠️ Error answering question: {str(e)}"
