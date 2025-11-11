@@ -1,0 +1,22 @@
+# Ignore environment variables
+.env
+venv/
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore IDE files
+.vscode/
+.idea/
+
+# Ignore large data files 
+*.csv
+*.xlsx
+*.json
+
+# Ignore Streamlit cache
+.streamlit/
+
+# Ignore any local logs or temp files
+*.log
+temp/
