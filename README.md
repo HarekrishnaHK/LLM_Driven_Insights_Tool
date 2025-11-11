@@ -10,10 +10,7 @@ InsightLLM is a web application that enables users to upload datasets and instan
 - **Interactive Visualizations:** Auto-generated and custom charts for deeper exploration.
 - **AI-Powered Insights:** Summarize trends and patterns in simple language.
 
-Here’s the **corrected and clean folder structure** for your `InsightLLM` project — matching your working code setup:
-
-```markdown
-## 📂 Folder Structure
+## Folder Structure
 
 ```
 
@@ -21,22 +18,22 @@ InsightLLM/
 │
 ├── app.py                        # Main Streamlit application file
 │
-├── utils/                        # Utility modules (backend logic)
-│   ├── **init**.py               # Initializes utils package
-│   ├── data_processor.py         # Handles dataset loading, summary stats, and column info
-│   ├── llm_handler.py            # Manages AI (Gemini/OpenAI) insights and Q&A
-│   ├── visualizer.py             # Generates automatic and custom Plotly charts
+├── utils/                        # Utility modules (modular backend logic)
+│   ├── **init**.py               # Marks utils as a package
+│   ├── data_processor.py         # Handles dataset loading, stats, column info, etc.
+│   ├── llm_handler.py            # Manages Gemini API for insights and queries
+│   ├── visualizer.py             # Generates automatic & custom Plotly visualizations
 │
-├── assets/                       # For logos, icons, or UI screenshots
-│   └── Insight.png               # Interface image
+├── .env.example                  # Example environment variable file
 │
-├── .env.example                  # Example environment variable file (for API key)
+├── requirements.txt              # Required libraries for deployment
 │
-├── requirements.txt              # Dependencies (Streamlit, Pandas, Plotly, etc.)
+├── README.md                     # Project description, usage guide, screenshots
 │
-└── README.md                     # Project documentation
+└── assets/                       # For logos, icons, or dataset samples
+└── Insight.png
 
-```
+````
 
 ## Setup
 
